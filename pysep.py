@@ -7,7 +7,7 @@ def sepdump_info(sepdumpid: int, start: int, end: int, applist: list) -> dict:
     img_info['name'] = applist[sepdumpid]
     img_info['start'] = start
     img_info['end'] = end
-    img_info['size'] = end - start 
+    img_info['size'] = end - start
     return img_info
 
 
