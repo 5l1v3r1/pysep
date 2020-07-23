@@ -7,13 +7,13 @@ def sepdump_info(sepdumpid: int, start: int, end: int, applist: list) -> dict:
     img_info['name'] = applist[sepdumpid]
     img_info['start'] = start
     img_info['end'] = end
-    img_info['size'] = end - start + 1
+    img_info['size'] = end - start 
     return img_info
 
 
 def sepsplit(sep, sepinfo: dict):
     sep.seek(sepinfo['start'])
-    sepdata = sep.read(sepinfo['size'])
+    sepdata = sep.read(sepinfo['size'] + 1)
     open("sepdump_" + sepinfo['name'], 'wb').write(sepdata)
 
 
